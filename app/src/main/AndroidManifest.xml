@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Activitys.MainActivity">
+        <activity android:name=".Activitys.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".Activitys.MainActivity"/>
         <activity
             android:name=".Activitys.GetVolleyComments"
             android:parentActivityName=".Activitys.MainActivity" />
@@ -29,9 +29,9 @@
         <activity
             android:name=".Activitys.GetRetrofitdog"
             android:parentActivityName=".Activitys.GetRetrofitdog" />
-        <activity android:name=".Activitys.UserActivity"
-            android:parentActivityName=".Activitys.MainActivity"/>
-
+        <activity
+            android:name=".Activitys.UserActivity"
+            android:parentActivityName=".Activitys.MainActivity" />
     </application>
 
 </manifest>

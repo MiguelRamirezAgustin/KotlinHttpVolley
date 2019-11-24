@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.httpvolley.Activitys.UserActivity
 import com.example.httpvolley.Clases.ModelUsers
@@ -38,6 +39,26 @@ class AdapterUsers(private val context:UserActivity, private val userList:List<M
         holder.usu_bs?.text = " - " +userModel.us_bs
         holder.usu_lat?.text = "Latitud  "+userModel.us_lat
         holder.usu_lng?.text = "Longitud  "+userModel.us_lng
+
+        holder.verMas.setOnClickListener{
+            holder.linearL.visibility = View.VISIBLE
+
+            if (holder.linearL.visibility == View.VISIBLE){
+                holder.ocultar.visibility = View.VISIBLE
+                holder.verMas.visibility = View.GONE
+            }
+        }
+
+        holder.ocultar.setOnClickListener {
+            holder.linearL.setVisibility(View.GONE)
+
+            if(holder.linearL.visibility ==  View.GONE){
+                holder.ocultar.visibility = View.GONE
+                holder.verMas.visibility = View.VISIBLE
+            }
+        }
+
+
     }
 
 
@@ -56,6 +77,9 @@ class AdapterUsers(private val context:UserActivity, private val userList:List<M
         val usu_bs = view.eVCompanybs
         val usu_lat = view.eVLat
         val usu_lng = view.eVLog
+        val verMas = view.ImgExpand
+        val linearL = view.linearOcultar
+        val ocultar = view.ImgOcultar
 
     }
 }

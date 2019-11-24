@@ -3,6 +3,9 @@ package com.example.httpvolley.Activitys
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -16,6 +19,7 @@ import com.example.httpvolley.Adapters.AdapterUsers
 import com.example.httpvolley.Clases.ModelUsers
 import com.example.httpvolley.R
 import com.google.gson.JsonArray
+import kotlinx.android.synthetic.main.item_users_volley.*
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -23,6 +27,7 @@ class UserActivity : AppCompatActivity() {
     var toolbar: Toolbar? = null
     private lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var rvUsuariosRv: RecyclerView
+    var animation :LayoutAnimationController? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,18 +37,26 @@ class UserActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar_getVolley_user)
         rvUsuariosRv = findViewById(R.id.rvUsuarios)
 
+
+
+        animation = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_animation_from_right)
+        rvUsuariosRv?.setLayoutAnimation(animation)
+
         toolbar?.setTitle("Get Volley")
         setSupportActionBar(toolbar)
 
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
+
+
         getUser()
     }
 
     private fun getUser() {
         var queus = Volley.newRequestQueue(this)
-        var url: String = getString(R.string.url_user)
+        //var url: String = getString(R.string.url_user)
+
         var solicitud = StringRequest(
             Request.Method.GET,
             getString(R.string.url_user),
@@ -113,6 +126,7 @@ class UserActivity : AppCompatActivity() {
                     )
                     rvUsuario.layoutManager = linearLayoutManager
                     rvUsuario.adapter = AdapterUsers(this, listaUsers)
+                    rvUsuario.scheduleLayoutAnimation()
 
                 } catch (E: Exception) {
                     Toast.makeText(

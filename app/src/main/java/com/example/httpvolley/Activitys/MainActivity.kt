@@ -21,12 +21,6 @@ import com.example.httpvolley.*
 import com.example.httpvolley.Adapters.AdaptadorCuston
 import com.example.httpvolley.Clases.Usuarios
 import java.util.ArrayList
-import android.view.animation.AnimationUtils.loadLayoutAnimation
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import org.jetbrains.anko.ctx
-import androidx.core.content.ContextCompat.getSystemService
-import android.R.attr.animation
 
 
 
@@ -54,13 +48,12 @@ class MainActivity : AppCompatActivity() {
 
         animation = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_animation_from_bottom)
         lista?.setLayoutAnimation(animation)
+
         toolbar_?.setTitle("Consumo de Api Volley")
         setSupportActionBar(toolbar_)
 
         layoutManager = LinearLayoutManager(this)
         lista?.layoutManager = layoutManager
-
-
 
 
         RequesVolley()

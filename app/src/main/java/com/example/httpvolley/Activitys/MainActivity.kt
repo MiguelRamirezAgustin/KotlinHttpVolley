@@ -108,6 +108,10 @@ class MainActivity : AppCompatActivity() {
             R.id.id_getVolleyUser ->{
                 startActivity(Intent(this, UserActivity::class.java))
                 return true
+            }
+            R.id.id_getVolleyNotas ->{
+                startActivity(Intent(this, NotasActivity::class.java))
+                return true
             }else ->{
             return super.onOptionsItemSelected(item)
            }

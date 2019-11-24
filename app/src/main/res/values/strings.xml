@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">HttpVolley</string>
     <string name="url_user">https://jsonplaceholder.typicode.com/users</string>
+
+
+    <!--Servicios locales con node.js y mongodb -->
+    <string name="url_notas">http://localhost:3000/notes</string>
+
 </resources>

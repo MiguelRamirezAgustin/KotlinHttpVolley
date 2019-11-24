@@ -23,4 +23,9 @@
         android:iconTint="#FFFFFF"
         android:icon="@drawable/ic_public"/>
 
+    <item android:id="@+id/id_getVolleyNotas"
+        android:title="Ver Notas"
+        android:iconTint="#FFFFFF"
+        android:icon="@drawable/ic_public"/>
+
 </menu>

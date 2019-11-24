@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -19,6 +21,14 @@ import com.example.httpvolley.*
 import com.example.httpvolley.Adapters.AdaptadorCuston
 import com.example.httpvolley.Clases.Usuarios
 import java.util.ArrayList
+import android.view.animation.AnimationUtils.loadLayoutAnimation
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import org.jetbrains.anko.ctx
+import androidx.core.content.ContextCompat.getSystemService
+import android.R.attr.animation
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +40,8 @@ class MainActivity : AppCompatActivity() {
     var dataEmail:String? = null
     var usuarios = ArrayList<Usuarios>()
     var toolbar_: Toolbar? = null
+    var animation: LayoutAnimationController? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +52,8 @@ class MainActivity : AppCompatActivity() {
         lista = findViewById(R.id.lista)
         lista?.setHasFixedSize(true)
 
+        animation = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_animation_from_bottom)
+        lista?.setLayoutAnimation(animation)
         toolbar_?.setTitle("Consumo de Api Volley")
         setSupportActionBar(toolbar_)
 
@@ -76,6 +90,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 adaptador = AdaptadorCuston(usuarios)
                 lista?.adapter = adaptador
+                lista?.scheduleLayoutAnimation()
             }, Response.ErrorListener {
                 Log.d("TAG", "Error>>>>>>>>>>>>>>>>>>> ")
             })
@@ -112,7 +127,12 @@ class MainActivity : AppCompatActivity() {
             R.id.id_getVolleyNotas ->{
                 startActivity(Intent(this, NotasActivity::class.java))
                 return true
-            }else ->{
+            }
+            /*R.id.id_pdf ->{
+                startActivity(Intent(this, PdfActivity::class.java))
+                return true
+            }*/
+            else ->{
             return super.onOptionsItemSelected(item)
            }
         }

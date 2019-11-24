@@ -28,4 +28,9 @@
         android:iconTint="#FFFFFF"
         android:icon="@drawable/ic_public"/>
 
+    <item android:id="@+id/id_pdf"
+        android:title="Pdf"
+        android:iconTint="#FFFFFF"
+        android:icon="@drawable/ic_public"/>
+
 </menu>

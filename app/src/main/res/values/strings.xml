@@ -5,5 +5,7 @@
 
     <!--Servicios locales con node.js y mongodb -->
     <string name="url_notas">http://localhost:3000/notes</string>
+    <string name="anim_duration_medium">100</string>
+
 
 </resources>

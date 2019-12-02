@@ -46,11 +46,13 @@ class AdapterUsers(private val context:UserActivity, private val userList:List<M
             if (holder.linearL.visibility == View.VISIBLE){
                 holder.ocultar.visibility = View.VISIBLE
                 holder.verMas.visibility = View.GONE
+                holder.viewA.visibility = View.VISIBLE
             }
         }
 
         holder.ocultar.setOnClickListener {
             holder.linearL.setVisibility(View.GONE)
+            holder.viewA.visibility = View.INVISIBLE
 
             if(holder.linearL.visibility ==  View.GONE){
                 holder.ocultar.visibility = View.GONE
@@ -80,6 +82,7 @@ class AdapterUsers(private val context:UserActivity, private val userList:List<M
         val verMas = view.ImgExpand
         val linearL = view.linearOcultar
         val ocultar = view.ImgOcultar
+        val viewA = view.vieAzul
 
     }
 }

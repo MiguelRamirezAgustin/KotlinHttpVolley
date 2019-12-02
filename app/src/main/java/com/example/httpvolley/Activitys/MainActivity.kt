@@ -117,14 +117,14 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, UserActivity::class.java))
                 return true
             }
-            R.id.id_getVolleyNotas ->{
-                startActivity(Intent(this, NotasActivity::class.java))
+            R.id.id_Faacebook ->{
+                startActivity(Intent(this, LoginFacebookActivity::class.java))
                 return true
             }
-            /*R.id.id_pdf ->{
-                startActivity(Intent(this, PdfActivity::class.java))
+            R.id.id_paraDialog ->{
+                startActivity(Intent(this, ParamDialogActivity::class.java))
                 return true
-            }*/
+            }
             else ->{
             return super.onOptionsItemSelected(item)
            }

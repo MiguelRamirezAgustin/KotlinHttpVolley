@@ -23,13 +23,13 @@
         android:iconTint="#FFFFFF"
         android:icon="@drawable/ic_public"/>
 
-    <item android:id="@+id/id_getVolleyNotas"
-        android:title="Ver Notas"
+    <item android:id="@+id/id_Faacebook"
+        android:title="Login Facebook"
         android:iconTint="#FFFFFF"
         android:icon="@drawable/ic_public"/>
 
-    <item android:id="@+id/id_pdf"
-        android:title="Pdf"
+    <item android:id="@+id/id_paraDialog"
+        android:title="Parametros Dialog y Spinner"
         android:iconTint="#FFFFFF"
         android:icon="@drawable/ic_public"/>
 

@@ -24,11 +24,11 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 class UserActivity : AppCompatActivity() {
+
     var toolbar: Toolbar? = null
     private lateinit var linearLayoutManager: LinearLayoutManager
     lateinit var rvUsuariosRv: RecyclerView
     var animation :LayoutAnimationController? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +36,6 @@ class UserActivity : AppCompatActivity() {
 
         toolbar = findViewById(R.id.toolbar_getVolley_user)
         rvUsuariosRv = findViewById(R.id.rvUsuarios)
-
-
 
         animation = AnimationUtils.loadLayoutAnimation(this, R.anim.layout_animation_from_right)
         rvUsuariosRv?.setLayoutAnimation(animation)
@@ -47,8 +45,6 @@ class UserActivity : AppCompatActivity() {
 
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-
-
 
         getUser()
     }
@@ -106,7 +102,6 @@ class UserActivity : AppCompatActivity() {
                         val us_catchPhrase = jsonObjectCompany.getString("catchPhrase")
                         val us_bs = jsonObjectCompany.getString("bs")
 
-
                         val objeto = ModelUsers(
                             us_id, us_name, us_username, us_email, "", us_street, us_suite,
                             us_city, us_zipcode, "", us_lat, us_lng, us_phone, us_web, "",
@@ -147,7 +142,7 @@ class UserActivity : AppCompatActivity() {
     }
 }
 
-//Array que se consume
+//  Array que se consume
 /*[
 {
     "id": 1,

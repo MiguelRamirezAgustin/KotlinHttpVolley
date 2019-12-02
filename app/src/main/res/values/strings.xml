@@ -7,5 +7,6 @@
     <string name="url_notas">http://localhost:3000/notes</string>
     <string name="anim_duration_medium">100</string>
 
-
+    <string name="facebook_app_id">527744331287563</string>
+    <string name="fb_login_protocol_scheme">fb527744331287563</string>
 </resources>

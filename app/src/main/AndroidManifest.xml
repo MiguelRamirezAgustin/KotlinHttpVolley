@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activitys.ParamDialogActivity"></activity>
+        <activity
+            android:name=".Activitys.RetrofitGetActivity"
+            android:parentActivityName=".Activitys.MainActivity"/>
+        <activity android:name=".Activitys.ParamDialogActivity" />
         <activity android:name=".Activitys.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

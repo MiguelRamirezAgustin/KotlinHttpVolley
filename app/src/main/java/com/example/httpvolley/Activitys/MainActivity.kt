@@ -125,6 +125,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, ParamDialogActivity::class.java))
                 return true
             }
+
+            R.id.id_retrofitGet ->{
+                startActivity(Intent(this, RetrofitGetActivity::class.java))
+                return true
+            }
+
             else ->{
             return super.onOptionsItemSelected(item)
            }

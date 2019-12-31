@@ -33,4 +33,10 @@
         android:iconTint="#FFFFFF"
         android:icon="@drawable/ic_public"/>
 
+
+    <item android:id="@+id/id_retrofitGet"
+        android:title="Get retrofit"
+        android:iconTint="#FFFFFF"
+        android:icon="@drawable/ic_public"/>
+
 </menu>
